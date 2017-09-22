@@ -42,6 +42,12 @@ namespace BitChangeSetManager.DataAccess
 
         public virtual DbSet<City> Cities { get; set; }
 
+        public virtual DbSet<Category> Categories { get; set; }
+
+        public virtual DbSet<CategoryType> CategoryTypes { get; set; }
+
+        public virtual DbSet<Product> Products { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();

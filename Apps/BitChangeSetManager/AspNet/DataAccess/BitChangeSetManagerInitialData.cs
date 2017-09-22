@@ -84,6 +84,7 @@ namespace BitChangeSetManager.DataAccess
                     IBitChangeSetManagerRepository<Province> provincesRepository = childResolver.Resolve<IBitChangeSetManagerRepository<Province>>();
                     IBitChangeSetManagerRepository<City> citiesRepository = childResolver.Resolve<IBitChangeSetManagerRepository<City>>();
                     IBitChangeSetManagerRepository<Constant> constantsRepository = childResolver.Resolve<IBitChangeSetManagerRepository<Constant>>();
+                    IBitChangeSetManagerRepository<CategoryType> categoryTypesRepository = childResolver.Resolve<IBitChangeSetManagerRepository<CategoryType>>();
 
                     Customer customer1 = new Customer { Id = Guid.NewGuid(), Name = "Customer1" };
                     Customer customer2 = new Customer { Id = Guid.NewGuid(), Name = "Customer2" };
@@ -129,6 +130,8 @@ namespace BitChangeSetManager.DataAccess
                         new Constant { Id = Guid.NewGuid(), Name = "Gender_Woman", Title = "Woman" },
                         new Constant { Id = Guid.NewGuid(), Name = "Gender_Other", Title = "Other" }
                     });
+
+                    categoryTypesRepository.AddRange(new[] { new CategoryType { Name = "T1" }, new CategoryType { Name = "T2" } });
 
                     provincesRepository.AddRange(new[] { province1, province2, province3 });
                     citiesRepository.AddRange(cities);

@@ -4,7 +4,8 @@
         name: "App",
         templateUrl: `view/views/app.html`,
         $routeConfig: [
-            { path: "/change-sets-page", name: "ChangeSetsViewModel", useAsDefault: true }
+            { path: "/change-sets-page", name: "ChangeSetsViewModel", useAsDefault: true },
+            { path: "/create-category-page", name: "CreateCategoryViewModel" }
         ]
     })
     export class App extends FormViewModel {

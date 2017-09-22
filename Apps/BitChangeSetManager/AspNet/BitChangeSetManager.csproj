@@ -389,6 +389,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\CategoriesController.cs" />
     <Compile Include="Api\Implementations\BitChangeSetManagerAppMessageHubEvents.cs" />
     <Compile Include="Api\ChangeSetImagesController.cs" />
     <Compile Include="Api\ChangeSetDeliveryRequirementsController.cs" />
@@ -410,6 +411,7 @@
     <Compile Include="DataAccess\BitChangeSetManagerInitialData.cs" />
     <Compile Include="DataAccess\ChangeSetRepository.cs" />
     <Compile Include="DataAccess\IBitChangeSetManagerRepository.cs" />
+    <Compile Include="Dto\CategoryDto.cs" />
     <Compile Include="Dto\ChangeSetDescriptionTemplateDto.cs" />
     <Compile Include="Dto\ChangeSetDto.cs" />
     <Compile Include="Dto\ChangeSetDeliveryRequirementDto.cs" />
@@ -424,6 +426,7 @@
     <Compile Include="Metadata\ChangeSetDtoMetadata.cs" />
     <Compile Include="Metadata\ChangeSetsViewMetadata.cs" />
     <Compile Include="Metadata\DeliveryDtoMetadata.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\ChangeSet.cs" />
     <Compile Include="Model\ChangeSetImage.cs" />
     <Compile Include="Model\ChangeSetDeliveryRequirement.cs" />
@@ -449,12 +452,14 @@
     <TypeScriptCompile Include="wwwroot\bitChangeSetManager.objectDependencies.ts" />
     <TypeScriptCompile Include="wwwroot\bitChangeSetManagerAngularAppInitialization.ts" />
     <TypeScriptCompile Include="wwwroot\bitChangeSetManagerPathProvider.ts" />
+    <TypeScriptCompile Include="wwwroot\dto\categoryDto.d.ts" />
     <TypeScriptCompile Include="wwwroot\imports.ts" />
     <TypeScriptCompile Include="wwwroot\security\bitChangeSetManagerSecurity.fileDependencies.ts" />
     <TypeScriptCompile Include="wwwroot\security\bitChangeSetManagerSecurity.objectDependencies.ts" />
     <TypeScriptCompile Include="wwwroot\security\bitChangeSetManagerSecurityPathProvider.ts" />
     <TypeScriptCompile Include="wwwroot\security\imports.ts" />
     <TypeScriptCompile Include="wwwroot\viewModel\viewModels\app.ts" />
+    <TypeScriptCompile Include="wwwroot\viewModel\viewModels\createCategoryViewModel.ts" />
     <TypeScriptCompile Include="wwwroot\viewModel\viewModels\changeSetsViewModel.ts" />
     <TypeScriptCompile Include="wwwroot\viewModel\viewModels\changeSetViewModel.ts" />
     <TypeScriptCompile Include="wwwroot\view\directives\backToTop.ts" />
