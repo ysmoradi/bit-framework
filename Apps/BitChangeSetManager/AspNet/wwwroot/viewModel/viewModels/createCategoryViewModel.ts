@@ -37,7 +37,7 @@
 
                 context.categories.add(this.category);
 
-                for (let product of this.productsViewModel.productsDataSource.dataView<BitChangeSetManagerModel.ProductDto>()) {
+                for (let product of this.productsViewModel.getProducts()) {
                     context.products.add(product);
                 }
 
@@ -134,7 +134,7 @@
         name: "ProductsViewModel",
         template: `
 <div>
-    <rad-grid rad-data-source="::vm.productsDataSource" k-groupable="false" k-sortable="false">
+    <rad-grid rad-data-source="::vm.productsDataSource" k-groupable="false">
         <toolbar-template>
             <rad-grid-add-button ng-disabled="vm.category.IsSaved == true">Add new product</rad-grid-add-button>
         </toolbar-template>
@@ -175,6 +175,10 @@
                     model: BitChangeSetManagerModel.ProductDto["asKendoModel"]()
                 }
             });
+        }
+
+        public getProducts(): Array<BitChangeSetManagerModel.ProductDto> {
+            return this.productsDataSource.dataView<BitChangeSetManagerModel.ProductDto>();
         }
     }
 
