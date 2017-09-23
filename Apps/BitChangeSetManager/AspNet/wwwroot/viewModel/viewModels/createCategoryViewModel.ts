@@ -81,6 +81,7 @@
         <label>Category type</label>
         <rad-combo-box name="CategoryTypeId"
                     rad-data-source="::vm.categoryTypesDataSource"
+                    rad-text="vm.model.CategoryTypeName"
                     rad-value-field-name="Id"
                     rad-text-field-name="Name"
                     ng-model="vm.model.CategoryTypeId" />
@@ -109,7 +110,7 @@
         public async $onInit() {
             this.createCategoryViewModel.categoryDtoViewModel = this;
             let context = await this.entityContextProvider.getContext<BitChangeSetManagerContext>("BitChangeSetManager");
-            this.categoryTypesDataSource = (await context.categoryTypes.toArray()).toQueryable(BitChangeSetManagerModel.CategoryTypeDto).asKendoDataSource();
+            this.categoryTypesDataSource = context.categoryTypes.asKendoDataSource({ serverFiltering: false, serverPaging: false, serverSorting: false, sort: { field: "Name", dir: true } });
         }
 
         public isValid(): boolean {
